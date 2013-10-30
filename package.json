@@ -3,6 +3,9 @@
   "description": "",
   "version": "0.0.0",
   "main": "decoratejs.js",
+  "dependencies": {
+    "require": "*"
+  },
   "devDependencies": {
     "chai": "*",
     "mocha": "*"
