@@ -1,16 +1,16 @@
 var expect = require('chai').expect;
 
-var decorate = require('../decorate.js');
+var decoratejs = require('../decoratejs.js');
 
-describe('decorate()', function () {
+describe('decoratejs()', function () {
     it('Check exports', function () {
-        expect(true).to.equal('loggable' in decorate);
-        expect(true).to.equal('profilable' in decorate);
-        expect(true).to.equal('createinterface' in decorate);
+        expect(true).to.equal('loggable' in decoratejs);
+        expect(true).to.equal('profilable' in decoratejs);
+        expect(true).to.equal('createinterface' in decoratejs);
     });
     it('Check loggable', function () {
         var foo = { propA : 1, methodA : function() { return 1; }, methodB : function(a,b) { return a + b; } };
-        var loggableFoo = decorate.loggable(foo);
+        var loggableFoo = decoratejs.loggable(foo);
         // force a new line for tidiness
         console.log(' ');
         expect(foo.propA).to.equal(loggableFoo.propA);
@@ -19,7 +19,7 @@ describe('decorate()', function () {
     });
     it('Check profilable', function () {
         var foo = { propA : 1, methodA : function() { return 1; }, methodB : function(a,b) { return a + b; } };
-        var profilableFoo = decorate.profilable(foo);
+        var profilableFoo = decoratejs.profilable(foo);
         // force a new line for tidiness
         console.log(' ');
         expect(foo.propA).to.equal(profilableFoo.propA);
@@ -28,8 +28,8 @@ describe('decorate()', function () {
     });
     it('Check profilable and loggable', function () {
         var foo = { propA : 1, methodA : function() { return 1; }, methodB : function(a,b) { return a + b; } };
-        var profilableFoo = decorate.profilable(foo);
-        var loggableFoo = decorate.loggable(profilableFoo);
+        var profilableFoo = decoratejs.profilable(foo);
+        var loggableFoo = decoratejs.loggable(profilableFoo);
         // force a new line for tidiness
         console.log(' ');
         expect(foo.propA).to.equal(loggableFoo.propA);
@@ -38,7 +38,7 @@ describe('decorate()', function () {
     });
     it('Check createinterface', function () {
         var fooIfaceList = ['methodA','methodB'];
-        var fooInterface = decorate.createinterface(fooIfaceList);
+        var fooInterface = decoratejs.createinterface(fooIfaceList);
         // force a new line for tidiness
         for (var methodname in fooIfaceList) {
             expect(methodname in fooInterface).to.equal(true);

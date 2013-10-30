@@ -1,4 +1,4 @@
-/*! decorate v0.0.1 - MIT license */
+/*! decoratejs v0.0.1 - MIT license */
 
 'use strict';
 
