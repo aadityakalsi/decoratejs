@@ -1,7 +1,7 @@
 {
   "name": "decoratejs",
   "description": "",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "main": "decoratejs.js",
   "dependencies": {
     "require": "*"
@@ -11,6 +11,6 @@
     "mocha": "*"
   },
   "scripts": {
-    "test": "mocha --no-colors --reporter spec"
+    "test": "mocha --reporter spec"
   }
 }
