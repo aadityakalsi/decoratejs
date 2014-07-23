@@ -1,16 +1,16 @@
 var expect = require('chai').expect;
 
-var decoratejs = require('../decoratejs.js');
+var decjs = require('../decoratejs.js');
 
 describe('decoratejs()', function () {
     it('Check exports', function () {
-        expect(true).to.equal('loggable' in decoratejs);
-        expect(true).to.equal('profilable' in decoratejs);
-        expect(true).to.equal('createinterface' in decoratejs);
+        expect(true).to.equal('loggable' in decjs);
+        expect(true).to.equal('profilable' in decjs);
+        expect(true).to.equal('createinterface' in decjs);
     });
     it('Check loggable', function () {
         var foo = { propA : 1, methodA : function() { return 1; }, methodB : function(a,b) { return a + b; } };
-        var loggableFoo = decoratejs.loggable(foo);
+        var loggableFoo = decjs.loggable(foo);
         // force a new line for tidiness
         console.log(' ');
         expect(foo.propA).to.equal(loggableFoo.propA);
@@ -19,7 +19,7 @@ describe('decoratejs()', function () {
     });
     it('Check profilable', function () {
         var foo = { propA : 1, methodA : function() { return 1; }, methodB : function(a,b) { return a + b; } };
-        var profilableFoo = decoratejs.profilable(foo);
+        var profilableFoo = decjs.profilable(foo);
         // force a new line for tidiness
         console.log(' ');
         expect(foo.propA).to.equal(profilableFoo.propA);
@@ -28,8 +28,8 @@ describe('decoratejs()', function () {
     });
     it('Check profilable and loggable', function () {
         var foo = { propA : 1, methodA : function() { return 1; }, methodB : function(a,b) { return a + b; } };
-        var profilableFoo = decoratejs.profilable(foo);
-        var loggableFoo = decoratejs.loggable(profilableFoo);
+        var profilableFoo = decjs.profilable(foo);
+        var loggableFoo = decjs.loggable(profilableFoo);
         // force a new line for tidiness
         console.log(' ');
         expect(foo.propA).to.equal(loggableFoo.propA);
@@ -38,7 +38,7 @@ describe('decoratejs()', function () {
     });
     it('Check createinterface', function () {
         var fooIfaceList = ['methodA','methodB'];
-        var fooInterface = decoratejs.createinterface(fooIfaceList);
+        var fooInterface = decjs.createinterface(fooIfaceList);
         // force a new line for tidiness
         for (var methodname in fooIfaceList) {
             expect(methodname in fooInterface).to.equal(true);
