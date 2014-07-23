@@ -39,9 +39,18 @@ describe('decoratejs()', function () {
     it('Check createinterface', function () {
         var fooIfaceList = ['methodA','methodB'];
         var fooInterface = decjs.createinterface(fooIfaceList);
+        var methodname = undefined;
+
         // force a new line for tidiness
-        for (var methodname in fooIfaceList) {
-            expect(methodname in fooInterface).to.equal(true);
-        }
+        expect(JSON.stringify(Object.keys(fooInterface))).to.equal(JSON.stringify(fooIfaceList));
+        // empty behaviour
+        expect(Object.keys(decjs.createinterface([])).length).to.equal(0);
+
+        // multiply defined names
+        fnList = ['methodA','methodB','methodA','methodA','methodB'];
+        fooInterface = decjs.createinterface(fnList);
+        // force a new line for tidiness
+expect(JSON.stringify(Object.keys(fooInterface))).to.equal(JSON.stringify(fooIfaceList));
+        expect(Object.keys(fooInterface).length).to.equal(2);
     });
 });

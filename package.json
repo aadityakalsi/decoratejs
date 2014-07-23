@@ -1,7 +1,7 @@
 {
   "name": "decoratejs",
   "description": "Mixins and interface gen",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "main": "decoratejs.js",
   "dependencies": {
     "require": "*"

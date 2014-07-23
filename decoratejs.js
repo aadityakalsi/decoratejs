@@ -101,7 +101,10 @@ function loggableMixin(obj) {
 
 function createInterface(arrayofnames) {
     var newobj = {};
-    for (var name in arrayofnames) {
+    var nameIdx = 0;
+    for (;nameIdx < arrayofnames.length; ++nameIdx) {
+        var name = arrayofnames[nameIdx];
+        if (name in newobj) { continue; }
         newobj[name] = (function () {
                             throwUnimplementedException(name);
                         });
