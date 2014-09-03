@@ -2,7 +2,7 @@
 
 Decorate is a small library for providing simple utilities to decorate objects and create interfaces.
 
-[![Build Status](https://secure.travis-ci.org/user/decorate.png?branch=master)](https://travis-ci.org/aadityakalsi/decoratejs.svg?branch=master)
+[![Build Status](https://secure.travis-ci.org/user/decoratejs.svg?branch=master)](https://travis-ci.org/aadityakalsi/decoratejs.svg?branch=master)
 
 
 ## Installation
